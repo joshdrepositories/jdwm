@@ -75,6 +75,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbordercol, "-sf", selfgcol, NULL };
 static const char *firefoxcmd[] = { "firefox", NULL };
+static const char *btopcmd[] = { "alacritty", "-e", "btop", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *dmtoollockcmd[] = { "dm-tool", "lock", NULL };
 
@@ -84,6 +85,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = dmtoollockcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefoxcmd } },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = btopcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
