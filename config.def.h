@@ -76,6 +76,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcol, "-nf", normfgcol, "-sb", selbordercol, "-sf", selfgcol, NULL };
 static const char *firefoxcmd[] = { "firefox", NULL };
 static const char *btopcmd[] = { "alacritty", "-e", "btop", NULL };
+static const char *nvimcmd[] = { "alacritty", "-e", "nvim", ".", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *dmtoollockcmd[] = { "dm-tool", "lock", NULL };
 
@@ -86,6 +87,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = dmtoollockcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefoxcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = btopcmd } },
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = nvimcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
