@@ -77,14 +77,14 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *firefoxcmd[] = { "firefox", NULL };
 static const char *btopcmd[] = { "alacritty", "-e", "btop", NULL };
 static const char *nvimcmd[] = { "alacritty", "-e", "nvim", ".", NULL };
+static const char *slockcmd[] = { "alacritty", "-e", "slock", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *dmtoollockcmd[] = { "dm-tool", "lock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = dmtoollockcmd } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefoxcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = btopcmd } },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = nvimcmd } },
