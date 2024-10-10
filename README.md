@@ -1,3 +1,7 @@
+jdwm
+
+![Alt text](/screenshots/2024-10-09_23-31.png?raw=true)
+
 This is my custom install of dwm.
 
 dwm - dynamic window manager
