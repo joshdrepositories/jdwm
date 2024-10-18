@@ -22,8 +22,6 @@ static const char normfgcol[]             = "#bbbbbb";
 static const char selfgcol[]              = "#000000";
 static const char selbordercol[]          = "#2ff907";
 static const char selbgcol[]              = "#2ff907";
-static const char *inclight[]             = { "xbacklight", "-inc", "10", NULL };
-static const char *declight[]             = { "xbacklight", "-dec", "10", NULL };
 static const char *increasevolume[]  = { "amixer", "sset", "Master", "5%+", NULL };
 static const char *decreasevolume[]  = { "amixer", "sset", "Master", "5%-", NULL };
 
@@ -79,6 +77,8 @@ static const char *btopcmd[] = { "alacritty", "-e", "btop", NULL };
 static const char *nvimcmd[] = { "alacritty", "-e", "nvim", ".", NULL };
 static const char *slockcmd[] = { "alacritty", "-e", "slock", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *keepasscmd[]  = { "KeePassXC-2.7.9-x86_64.AppImage", NULL };
+static const char *signalcmd[]  = { "alacritty", "-e", "signal-desktop", "--password-store=gnome-libsecret",  NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -88,6 +88,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefoxcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = btopcmd } },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = nvimcmd } },
+	{ MODKEY|ShiftMask,             XK_k,      spawn,          {.v = keepasscmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = signalcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -109,8 +111,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-  { 0,                            XF86XK_MonBrightnessUp,    spawn,      {.v = inclight} },
-  { 0,                            XF86XK_MonBrightnessDown,  spawn,      {.v = declight} },
   { 0,                            XF86XK_AudioRaiseVolume,   spawn,      {.v = increasevolume } },
   { 0,                            XF86XK_AudioLowerVolume,   spawn,      {.v = decreasevolume } },
 	TAGKEYS(                        XK_1,                      0)
