@@ -76,6 +76,7 @@ static const char *firefoxcmd[] = { "firefox", NULL };
 static const char *btopcmd[] = { "alacritty", "-e", "btop", NULL };
 static const char *nvimcmd[] = { "alacritty", "-e", "nvim", ".", NULL };
 static const char *slockcmd[] = { "alacritty", "-e", "slock", NULL };
+static const char *nmtuicmd[] = { "alacritty", "-e", "nmtui", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *keepasscmd[]  = { "KeePassXC-2.7.9-x86_64.AppImage", NULL };
 static const char *signalcmd[]  = { "alacritty", "-e", "signal-desktop", "--password-store=gnome-libsecret",  NULL };
@@ -85,6 +86,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = nmtuicmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefoxcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = btopcmd } },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = nvimcmd } },
